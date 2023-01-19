@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Bar with Search Box</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="" />
+    <!-- Unicons CSS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/fstdropdown.css">
+    <style>
+      
+      * {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  padding: 10px;
+  
+}
+
+.columntwo{
+
+}
+#main{
+  margin-top:30px;
+}
+
+
+.row2 {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column2 {
+  flex: 50%;
+  padding: 10px;
+  height: 527px; /* Should be removed. Only for demonstration */
+}
+
+ul li a{
+  color:white;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 450px;
+  height: 40px;
+
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: white;
+
+}
+
+/* The search field */
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* The search field when it gets focus/clicked on */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+#region{
+  text-transform: uppercase;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        <li style="margin-left: 20px;color:white;">
+          <div class="dropdown">
+            <button class="btn btn-sm btn-primary dropdown-toggle" style="margin-top: -20px;"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              INVENTORY
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#"><b>Receive Item</b></a>
+              <a class="dropdown-item" href="#"><b>View Item List</b></a>
+              <a class="dropdown-item" href="#"><b>Transfer Stock</b></a>
+            </div>
+          </div></li>
+        <li><a href="#">Sales</a></li>
+        <li><a href="#">
+          <div class="dropdown">
+            <button class="btn btn-sm btn-primary dropdown-toggle" style="margin-top: -20px;"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              PURCHASES
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+              <a class="dropdown-item" href="#"><b>Receive Item</b></a>
+              <a class="dropdown-item" href="#"><b>View Item List</b></a>
+              <a class="dropdown-item" href="#"><b>Transfer Stock</b></a>
+            </div>
+        </li>
+        <li><a href="#">Cutomers</a></li>
+        <li><a href="#">Suppliers</a></li>
+        <li><a href="#">Expenses</a></li>
+        <li><a href="#">Accounts</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">Printer Selector</a></li>
+        <li><a href="#">Logoff</a></li>
+      </ul>
+
+     
+    </nav>
+<div id="main" style="margin:auto"> 
+  <hr>
+<br>
+<div class="row" style="margin:auto">
+  <div class="column" style="background-color:#aaa;">
+   <div style="height:5%;width:100%;background-color:#7B241C;">
+     <h3 style="text-align:center;color:white"><b>RETAIL</b></h3>
+   </div>
+
+ <div style="height:5%;width:100%;background-color:#7B241C ;">
+     <h1 style="text-align:center;color:white"></h1>
+   </div>
+     <br>
+   <div style="display: flex; justify-content:space-between">
+  <div style="height:40px;background-color:white;width:350px;">
+    <div class="form-check" style="margin-left: 10px;">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+    <b> Regular Mode</b>
+      </label>
+    </div>
+  </div>
+
+    <div style="height:40px;background-color:white;width:350px;">
+      <div class="form-check" style="margin-left: 10px;">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+     <b>  BarCode Mode</b>
+        </label>
+      </div>
+
+    </div>
+   
+   </div>
+   <br>
+   <div style="height:5%;width:100%;background-color:#F6DDCC ;">
+    <input style="margin-left: 20px;background-color:#F6DDCC ;border:none" class="form-check-input" type="text" name="exampleRadios" id="ProductSearch" placeholder="Search Item" >
+  </div>
+  <br>
+  <table class="table table-bordered table-sm">
+    <thead style="background-color: white;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">item Description</th>
+        <th scope="col">Stock Level(Achimota)</th>
+        <th scope="col">Stock Level(Tesano)</th>
+        <th scope="col" style="display:none">Vendor</th>
+        <th scope="col" style="display:none">Packsize</th>
+        <th scope="col" style="display:none">Cost_price</th>
+        <th scope="col" style="display:none">Selling_price</th>
+        <th scope="col" style="display:none">DrugType</th>
+        <th scope="col" style="display:none">LeftQty</th>
+        <th scope="col" style="display:none">Drug_Reff</th>
+        <th scope="col" style="display:none">Venor_Reff</th>
+      </tr>
+    </thead>
+    <tbody id="MyfirstTablediv">
+   
+     
+    </tbody>
+  </table>
+<hr>
+<button type="button" class="btn btn-secondary btn-lg"><i style="font-size: larger;" class='bx bxs-chevrons-left'></i></button>
+<button style="margin-left: 120px;" type="button" class="btn btn-secondary btn-lg"><i style="font-size: larger;" class='bx bxs-chevrons-left'></i></button>
+<button style="margin-left: 250px;" type="button" class="btn btn-secondary btn-lg"><i style="font-size: larger;" class='bx bxs-chevrons-right'></i></button>
+<button style="margin-left: 300px;" type="button" class="btn btn-secondary btn-lg"><i style="font-size: larger;" class='bx bxs-chevrons-right'></i></button>
+
+<hr>
+
+
+<h5 style="color:black;text-align:center;"><b>PERVIOUS PURCHASE(S) BY SELECTED CUSTOMER.</b></h5>
+  <table class="table table-bordered table-sm">
+    <thead style="background-color: white;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item(s)</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Date</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-warning">
+        <th scope="row">1</th>
+        <td><b>MAPTNOL TABELETS</b></td>
+        <td><b>04 jan 23</b></td>
+        <td><b>1/12/22</b></td>
+      
+        
+      </tr>
+      <tr class="table-warning">
+        <th scope="row">1</th>
+        <td><b>MAPTNOL TABELETS</b></td>
+        <td><b>04 jan 23</b></td>
+        <td><b>1.00</b></td>
+      
+        
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+
+  <div class="column" style="background-color:#bbb;">
+<div>
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <input type="date" class="form-control" placeholder="City">
+      </div>
+      <div class="col" style="background-color: red;">
+        <input type="text" readonly class="form-control" style="background-color: red;color:black;text-align:center;font-weight:900px;border:none;font-size:large;" placeholder="POSTED">
+      </div>
+      <div class="col">
+        <input type="text" readonly class="form-control" placeholder="Print Receipt">
+      </div>
+      <div class="col">
+        <input type="text"  readonly class="form-control" placeholder="Print Inovice">
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<div style="background-color: white;height:50px;width:100%;margin-top:20px"> 
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <label style="margin-left: 5px;"><b>Item Description</b></label>
+        <input style="border: #aaa 5px solid;" id="Item_description" type="text" class="form-control" placeholder="">
+      </div>
+      <div class="col" >
+        <label><b>Selling Price</b></label>
+        <input type="text" style="border: #aaa 5px solid;" id="Item_price"  class="form-control" style="color:black;text-align:center;font-weight:900px;font-size:large;" placeholder="0.00">
+      </div>
+      <div class="col">
+        <label><b>Pack Size</b></label>
+        <input type="text" style="border: #aaa 5px solid;" id="Item_packsize" class="form-control" placeholder="">
+      </div>
+      <div class="col">
+        <label><b>Quantity In Stock</b></label>
+        <input type="text" style="border: #aaa 5px solid;" id="Item_ava"  class="form-control" placeholder="">
+      </div>
+      <div class="col">
+        <label><b>Sheieve Number</b></label>
+        <input type="text" style="border: #aaa 5px solid;" id="itemShelvenumber" class="form-control" placeholder="">
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+<br>
+    <div style="background-color: white;margin:auto;">
+      <table class="table table-bordered table-sm">
+        <thead style="background-color: white;">
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Ava</th>
+            <th scope="col">Price</th>
+            <th scope="col" style="display:none">Cost</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Sub Total</th>
+            <th scope="col" style="display:none">DrugType</th>
+            <th scope="col" style="display:none">Drug_Reff</th>
+            <th scope="col" style="display:none">Vendor_Reff</th>
+
+         
+            <th scope="col">Del</th>
+            
+          </tr>
+        </thead>
+        <tbody id="SalestableBodyDiv">
+        
+        </tbody>
+      </table>
+
+
+      <div style="position: absolute;right:250px;margin-top:20px;">
+        
+        <div class="col-auto">
+          <div class="form-check mb-2">
+            <label class="form-check-label" for="autoSizingCheck" style="margin-right: 50px;">
+             <b style="font-size: 21px;"> Grand Total:</b>
+             </label>
+            <input style="font-size: 21px;margin-right:30px" class="form-check-input" id="Grand_Total_One" type="number" id="autoSizingCheck" placeholder="0.00">
+           
+          </div>
+        </div>
+      
+      </div>
+      
+    
+      <div style="position: absolute;right:520px;margin-bottom:25px;">
+        <button class="btn btn-danger btn-sm">New</button>
+        <button class="btn btn-info btn-sm">Recall</button>
+       </div>
+
+      
+    
+
+      <div class="row2">
+        <div class="column2" style="background-color:#aaa;">
+          <form style="margin: 0px;">
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"><b>Mode</b></label>
+              <select style="border: #aaa 2px solid;" class="form-control" id="TransactionMethod">
+                <option>select</option>
+                <option><b style="font-weight: 800;color:black;">CASH</b></option>
+                <option>CREDIT</option>
+                <option>CHEQUE</option>
+                <option>MOBILE MONEY</option>
+                <option>DEBIT CARD</option>
+              </select>
+            </div>
+          
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"><b>Select Customer</b></label>
+              <select class="fstdropdown-select" name="CustomerIdentity" id="CustomerIdentity" required="required" >
+                <option>Select Customer</option>
+                <%if(ListDrugs.length > 0){ %>
+                  <% ListDrugs.forEach(function(row){%>  
+                      <option value="<%= row.Customer_ID %>"><%= row.customer_Name %></option>
+                    <%});%>
+                    <%}%>
+                </select>
+            </div>
+            
+          
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"><b>Order Type</b></label>
+              <select style="border: #aaa 2px solid;" class="form-control" id="Order_Type">
+                <option>select</option>
+                <option>WALK-IN</option>
+                <option>PHONE CALL</option>
+                <option>WHATSAPP</option>
+                <option>SOCIAL MEDIA</option>
+              </select>
+            </div>
+            <div class="form-group" >
+              <label for="exampleFormControlSelect1"><b>Region</b></label>
+              <select style="border: #aaa 2px solid;" class="form-control" id="Order_Region">
+                <option>select</option>
+                <option id="region" value="Greater Accra Region"><b>Greater Accra Region</b></option>
+                <option  id="region" value="Eastern Region"><b>Eastern Region</b></option>
+                <option  id="region" value="Ashanti Region"><b>Ashanti Region</b></option>
+                <option  id="region" value="Western Region"><b>Western Region</b></option>
+                <option  id="region" value="Central Region"><b>Central Region</b></option>
+                <option  id="region" value="Volta Region"> <b>Volta Region</b></option>
+                <option  id="region" value="Northern Region"><b>Northern Region</b></option>
+                <option  id="region" value="Upper East Region"><b>Upper East Region</b></option>
+                <option  id="region" value="Bono Region"><b>Bono Region</b></option>
+                <option  id="region" value="Bono East Region"><b>Bono East Region</b></option>
+                <option  id="region" value="Ahafo Region"><b>Ahafo Region</b></option>
+                <option  id="region" value="Western North Region"><b>Western North Region</b></option>
+                <option  id="region" value=""><b>Oti Region</b></option>
+                <option  id="region" value="Savannah Region"><b>Savannah Region</b></option>
+                <option  id="region"  value="North East Region"><b>North East Region</b></option>
+              </select>
+            </div>
+
+
+         
+
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"><b>Customer Name</b></label>
+              <input style="border: #aaa 2px solid;"  type="text" id="Customer_Name_One"  class="form-control" readonly>
+            </div>
+          </form>
+        </div>
+
+
+
+
+        <div class="column2" style="background-color:#bbb;">
+         <br>
+         <br>
+         <br>
+          <h5><b>(Holding Options)</b></h5>
+          <hr>
+          <button type="button" class="btn btn-danger btn-lg">Hold</button>
+          <button type="button" style="margin-left: 80px;" class="btn btn-dark btn-lg">Uhold</button>
+          <button type="button" style="margin-left: 80px;"  class="btn btn-dark btn-lg">Clear</button>
+<hr>
+          <form>
+            <span><i style="font-size: large;" class='bx bxs-truck'></i><b>Apply Delivery Fees</b></span>
+            <div class="form-group row">
+            
+              <label for="inputEmail3" class="col-sm-2 col-form-label">select Area</label>
+              <div class="col-sm-10">
+                <select style="border: #aaa 2px solid;" class="form-control" id="Delivery_Area">
+                  <option>select</option>
+                  <option  id="region"><b>Amasaman</b></option>
+                  <option  id="region">Dansoman</option>
+                  <option  id="region">Adenta</option>
+                  <option  id="region">East Legon</option>
+                  <option  id="region">Haatso</option>
+                  <option  id="region">Kaneshie</option>
+                  <option  id="region">Madina</option>
+                  <option  id="region">Mallam</option>
+                  <option  id="region">Osu</option>
+                  <option  id="region">Spintex</option>
+                  <option  id="region">Tesano</option>
+                  <option  id="region"> Teshie</option>
+                  <option  id="region">Weija</option>
+                  <option  id="region">Airport Residential Area</option>
+                  <option  id="region">Labone</option>
+                  <option  id="region">Roman Ridge</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="Delivery_Fee_One" placeholder="00.00">
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                      First radio
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Second radio
+                    </label>
+                  </div>
+                 
+                </div>
+              </div>
+            </fieldset>
+           
+
+            <button style="position: absolute;right:10px;"  data-toggle="modal" data-target="#exampleModalLong" type="button" class="btn btn-dark btn-lg">TENDER</button>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+</div>
+
+</div>
+
+
+<footer style="width: 100%; height:100%; background-color:#023B67;">
+  <span style="color: white;">Pharmatech - Pharmacy System | www.datasustl.com</span>
+</footer>
+
+
+  </body>
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content"  style="width: 900px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><b>Tender</b></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="background-color:#AED6F1 ;">
+          <form>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label"><b>Grand Total ₵</b></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="Grand_Total_Two" placeholder="0.00" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label"><b>Discount ₵</b></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="Discountvalue" placeholder="0.00">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label"><b>VAT ₵</b></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="MyVatValue" placeholder="0.00">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label"><b>Delivery Fee ₵</b></label>
+              <div class="col-sm-10">
+                <input type="number" readonly class="form-control" id="Delivery_Fee_Two" placeholder="0.00" readonly>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputPassword" class="col-sm-2 col-form-label"><b>Amount Due ₵</b></label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="AmountDueOne" placeholder="0.00" readonly>
+              </div>
+            </div>
+            <hr style="font-weight: 800px;border:black 2px solid;">
+            <form class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Tranx Mode</label>
+                   <input type="text" style="border: #aaa 2px solid;" class="form-control" id="TranxMode" readonly/>
+                 
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom02"><b>Amount Paid</b></label>
+                  <input type="text" class="form-control" id="PayingAmount" placeholder="0.00"  required>
+                
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustomUsername"><b>Change</b></label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend"><b>GH₵</b></span>
+                    </div>
+                    <input type="text" class="form-control" id="ChangeBalance" placeholder="0.00" aria-describedby="inputGroupPrepend" readonly>
+                   
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustomUsername"><b>Credit Period</b></label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend">GH₵</span>
+                    </div>
+                    <input type="date" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+               
+                  </div>
+                </div>
+              </div>
+            
+             
+            </form>
+            
+           
+          </form>
+        </div>
+        <div class="modal-footer">
+
+          <button type="button" class="btn btn-primary"><a style="color: white;" id="SaveOnlyBtn">Save Only</a></button>
+          <button type="button" class="btn btn-primary"><a style="color: white;" href="invoice.html">Print Receipt</a></button>
+          <button type="button" class="btn btn-primary"><a style="color: white;" href="invoice.html">Print Invoice</a></button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Clear</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../assets/js/jquery1.3.4.js"></script>
+  <script src="../assets/js/myjs/sales.js"></script>
+  <script src="../assets/js/fstdropdown.js"></script>
+
+ 
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+ 
+</html>

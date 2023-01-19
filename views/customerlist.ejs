@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, Monsterlite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description" content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SCAR PHARMACY | RETAIL SERVICE | CUSTOMER DATA.</title>
+
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link href="../load/plugins/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="../assets/new/style.min.css" rel="stylesheet">
+
+    <link href="../assets/js/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+          }
+          /* cyrillic */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+          }
+          /* vietnamese */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+          }
+          /* latin-ext */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+          }
+          /* latin */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+          
+          
+          @import url('../Assets/Fonts/static/Raleway-Light.ttf');
+          @keyframes bounce { 
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50px); }
+          }
+   
+        th{
+            color: black;
+            font-weight:500px;
+            transition: 400ms;
+        }
+       
+        body{
+
+          font-family: 'Raleway', sans-serif;
+       
+        margin: auto;
+        }
+        footer {
+            position:fixed;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #012753;
+         
+          }
+    </style>
+ 
+</head>
+
+<body style="background-color: #D6EAF8;" >
+    <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color:#012753;height:40px;width:100%;position:fixed; left:0; right:0;background-image:url(../Assets/img/map-2-copy.svg) ">
+        <div>
+        <h7 style="color: white; font-weight:bolder;"> <a style="color: white; font-weight:bolder;" href="/dashboard">PharmaTech</a></h7>
+        </div> 
+                     
+        </nav>
+         
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+     <br>
+     <br>
+    
+     <nav style="background-color:#C4C4CD" class="navbar navbar-light bg-light justify-content-between">
+     <a class="navbar-brand" style="font-weight:bolder;color:black;"> <b>Pharmacy Customer Data</b>.</a>
+     <form class="form-inline">
+          <input class="form-control mr-sm-2" id="wareHousedrug" onkeyup="myFunction()" type="text" placeholder="Search" aria-label="Search">
+          <button style="color:white;margin-right:10px;" class="btn btn-danger my-2 my-sm-0" type="text"><a style="color:white;font-weight:bolder;" href="/Ware_HouseMainPage">Go Back</a></button>
+        <button style="color:white;border-radius:50px;margin-right:10px;" class="btn btn-success my-2 my-sm-0" type="text"><a href="/Customerregistrationform" style="color:white;font-weight:bolder;">Add New Customer</a></button>
+        <button style="color:white;border-radius:50px;" class="btn btn-info my-2 my-sm-0" type="text"><a href="" style="color:white;font-weight:bolder;">Credit System</a></button>
+        </form>
+      </nav>
+    
+<div class="table-responsive" style="margin-bottom:60px;">
+       
+            
+            <table class="table table-bordered table-hover table-responsive-sm table-sm" id="dataTable" style="color: white;">
+                <thead style="background-color:azure;">
+                    <tr>
+                        
+                        <th>Customer name</th>
+                        <th>Customer Email</th>
+                        <th>Customer Location</th>
+                        <th>Customer Phone</th>
+                        <th>Customer Type</th>
+                        <th>Date Joined</th>
+                        <th class="hide">ID</th>
+                        <th class="hide">Customer_ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color: white;">
+                     <%if(ListDrugs.length > 0){ %>
+                <% ListDrugs.forEach(function(row){%>
+                    <tr>
+                        
+                        <td><b style="color:black;font-weight:700px;"><%= row.customer_Name %></b></td>
+                        <td><b style="color:black;font-weight:bolder;"><%= row.EmailAddress  %></b></td>
+                        <td><b  style="color:black;font-weight:bolder;"><%= row.Location%></b></td>
+                        <td><b  style="color:black;font-weight:bolder;"><%= row.Telephone %></b></td>
+                        <td><b  style="color:black;font-weight:bolder;"><%= row.CustomerType%></b></td>
+                      
+                        <td><b style="color:black;font-weight:bolder;"><%= row.String_Date %></b></td>
+                        <td class="hide"><%= row.id %></td>
+                        <td class="hide"><%= row.Customer_ID %></td>
+                        <td>
+                            <buttom class="btn btn-sm btn-info edit OpenProfile">View</buttom>
+                            <buttom class="btn btn-sm btn-danger delete DeleteVendor">Delete</buttom>
+            
+                    
+                        </td>
+                    </tr>
+                    
+                     <%});%>
+                        <%}else{%>
+                    
+                </tbody>
+            </table>
+            <% } %>
+        </div>
+
+
+
+ 
+        <footer style="background-color:#11101D;position:fixed; left:0; right:0; bottom:0; color:white;height:30px;margin-top:10px;width: 100%;">
+            <div>
+                <h7><i class='bx bxs-capsule' ></i> PharmaTech</h7>
+            </div>
+            
+            </footer>
+   
+    </div>
+   
+    </div>
+
+
+
+   <div id="modal-danger" class="modal fade" style="margin-top:70px;">
+<div class="modal-dialog modal-confirm1">
+<div class="modal-content">
+<div class="modal-header" style="background-color: #e72f2f;">
+<div class="icon-box3" style="background-color: white;">
+<img src="../Assets/img/x-button.png" width="70px"  />
+</div>				
+<h4 style="color:white" class="modal-title w-100">Alert!</h4>	
+</div>
+<div class="modal-body">
+<p id="errormes" style="font-size: 17px; text-transform:capitalize;font-weight:bolder;" class="text-center"><b></b> </p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-success" id="canceltran">Yes</button>
+<button class="btn btn-danger"  data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div> 
+
+   
+
+
+
+    
+
+   
+
+<script src="../Assets/vendor/jquery/jquery.min.js"></script>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        $('.hide').hide()
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("wareHousedrug");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("dataTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        let OpenProfile = document.getElementsByClassName('OpenProfile')
+        let DeleteVendor = document.getElementsByClassName('DeleteVendor')
+
+        for(var i = 0; i < OpenProfile.length; i++){
+            OpenProfile[i].onclick = function(){
+                let CurrentRow = $(this).closest("tr")
+                let Customer_ID = (CurrentRow.find("td:eq(7)").text()).replace(/\s/g,'')
+               
+                window.document.location = '/Customer_ProfilePage'+ Customer_ID
+            }
+        }
+
+
+        for(var i = 0; i < DeleteVendor.length; i++){
+            DeleteVendor[i].onclick = function(){
+                let CurrentRow = $(this).closest("tr")
+                let Customer_ID = (CurrentRow.find("td:eq(7)").text()).replace(/\s/g,'')
+              
+                 
+               let Data = {Customer_ID:Customer_ID}
+                let CCC = confirm('YOU ARE ABOUT DELETE THIS CUSTOMER, IT IS PERMANENT AND CANNOT BE UNDONE!!!')
+                if(CCC === true){
+                    
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Customer_DeleteCustomer',
+                        ContentType: 'application/json',
+                        data: Data,
+                        success: function(data) {
+                           alert('THE CUSTOMER AS BEEN DELETED SUCCESSFULLY')
+                           window.location.reload()
+                        }
+                    })
+                }else{
+                    window.location.reload()
+                }
+            }
+        }
+       /* let dataTable = document.getElementById('dataTable')
+        let Modal_Table = document.getElementById('Modal_Table')
+        let ViewBtn = document.getElementsByClassName('ViewBtn')
+        for (var i = 0; i < ViewBtn.length; i++) {
+            ViewBtn[i].addEventListener('click', function() {
+                let CurrentRow = $(this).closest("tr")
+                let Telephone = CurrentRow.find("td:eq(1)").text()
+                let Row_ID = CurrentRow.find("td:eq(6)").text()
+                    //alert('BenJamin')
+                alert(Row_ID)
+                ClearTableRow()
+                if (Modal_Table.rows.length === 1) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/RetailcustumerPrescription',
+                        ContentType: 'application/json',
+                        data: {
+                            Telephone: Telephone,
+                            Row_ID: Row_ID
+                        },
+                        success: function(data) {
+                            let Data = data.Data
+                            if (Data.length === 0) {
+                                alert('THERE IS NO REGISTERED USER TO FETCHS')
+                            } else {
+
+                                for (var i = 0; i < Data.length; i++) {
+
+                                    let TRows = Modal_Table.insertRow(i + 1)
+                                    let Cell0 = TRows.insertCell(0)
+                                    let Cell1 = TRows.insertCell(1)
+                                    let Cell2 = TRows.insertCell(2)
+                                    let Cell3 = TRows.insertCell(3)
+                                    Cell0.textContent = Data[i].Drug_name
+                                    Cell1.textContent = Data[i].Drug_Type
+                                    Cell2.textContent = Data[i].Quantity
+                                    Cell3.textContent = Data[i].Dosage
+
+                                    $('#myModalthree').modal('show')
+                                        //alert(Modal_Table.rows.length)
+                                }
+
+                            }
+
+                        }
+                    });
+                } else {
+                    ClearTableRow()
+                    alert('PLEASE TRY CLICKING ON THE CUSTOMER AGAIN TO FETCH PRESCRIPTION')
+                    window.location.reload()
+                }
+
+            })
+        }
+
+        //function Onclose(){
+        //  window.location.reload()
+        //  }
+        function Bnrrtttu(x) {
+            alert(x)
+
+        }
+
+        function ClearTableRow() {
+            for (var x = 1; x < Modal_Table.rows.length; x++) {
+                Modal_Table.deleteRow(x)
+            }
+        }
+         */
+
+
+         ///////////////////// Benjamin ///////////////////////
+
+//////////////////////Exporting Data To excell////////////////////
+       
+
+        document.getElementById('ExportExcell').addEventListener('click', function(){
+          let InfoArray =[]
+          let dataTable22 = document.getElementById('dataTable') 
+          for(i = 1; i < dataTable22.rows.length; i++){
+             let customer_Name = dataTable22.rows[i].cells[0].textContent
+             let emailaddress = dataTable22.rows[i].cells[1].textContent
+             let location = dataTable22.rows[i].cells[2].textContent
+             let Telephone = dataTable22.rows[i].cells[3].textContent
+             let custdateofbirth = dataTable22.rows[i].cells[4].textContent
+             let String_Date = dataTable22.rows[i].cells[5].textContent
+
+            let Info = {customer_Name:customer_Name, emailaddress:emailaddress , location:location, Telephone:Telephone,  custdateofbirth:custdateofbirth, String_Date:String_Date}
+
+            InfoArray.push(Info)
+          }
+           let Title = 'Drug_Yeraly_Sales'
+           let Data = {Data: JSON.stringify(InfoArray), Title: Title}
+
+          // alert('Connected')
+           $.ajax({
+              type: 'POST',
+              url: '/GetExcel_DataSave',
+              ContentType: 'application/json',
+              data: Data,
+              success: function(data) {
+                let filename = (data.filename).replace(/\s/g,'')
+               // alert(data.Mes)
+                window.document.location ='/Excel_DownloadFile'+ filename
+               }
+          });
+        })
+
+    </script>
+
+
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <script src="../assets/js/jquery.dataTables.min.js"></script>
+     <script src="../assets/plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

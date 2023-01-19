@@ -1,0 +1,1 @@
+window.alert('Accounts From Laboratory Today..');

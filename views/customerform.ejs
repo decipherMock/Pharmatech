@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, Monsterlite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Monster admin lite design, Monster admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description" content="Monster Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>SCAR PHARMACY | RETAIL SERVICE | ADD CUSTOMER FORM</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link href="../Assets/css/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../load/plugins/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="../Assets/js/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../Assets/new/style.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body{
+            font-family: 'Raleway', sans-serif;
+           background-color: #D6EAF8;
+        }
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+          }
+          /* cyrillic */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+          }
+          /* vietnamese */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+          }
+          /* latin-ext */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+          }
+          /* latin */
+          @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(../Assets/Fonts/static/Raleway-Light.ttf) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+          }
+        .modal-content {
+            -webkit-border-radius: 0;
+            -webkit-background-clip: padding-box;
+            -moz-border-radius: 0;
+            -moz-background-clip: padding;
+            border-radius: 6px;
+            background-clip: padding-box;
+            -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+            -moz-box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+            box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+            color: #000;
+            background-color: #fff;
+            border: rgba(0, 0, 0, 0);
+        }
+        
+        .modal-message .modal-dialog {
+            width: 300px;
+        }
+        
+        .modal-message .modal-body,
+        .modal-message .modal-footer,
+        .modal-message .modal-header,
+        .modal-message .modal-title {
+            background: 0 0;
+            border: none;
+            margin: 0;
+            padding: 0 20px;
+            text-align: center!important;
+        }
+        
+        .modal-message .modal-title {
+            font-size: 17px;
+            color: #737373;
+            margin-bottom: 3px;
+        }
+        
+        .modal-message .modal-body {
+            color: #737373;
+        }
+        
+        .modal-message .modal-header {
+            color: #fff;
+            margin-bottom: 10px;
+            padding: 15px 0 8px;
+        }
+        
+        .modal-message .modal-header .fa,
+        .modal-message .modal-header .glyphicon,
+        .modal-message .modal-header .typcn,
+        .modal-message .modal-header .wi {
+            font-size: 30px;
+        }
+        
+        .modal-message .modal-footer {
+            margin: 25px 0 20px;
+            padding-bottom: 10px;
+        }
+        
+        .modal-backdrop.in {
+            zoom: 1;
+            filter: alpha(opacity=75);
+            -webkit-opacity: .75;
+            -moz-opacity: .75;
+            opacity: .75;
+        }
+        
+        .modal-backdrop {
+            background-color: #fff;
+        }
+        
+        .modal-message.modal-success .modal-header {
+            color: #53a93f;
+            border-bottom: 3px solid #a0d468;
+        }
+        
+        .modal-message.modal-info .modal-header {
+            color: #57b5e3;
+            border-bottom: 3px solid #57b5e3;
+        }
+        
+        .modal-message.modal-danger .modal-header {
+            color: #d73d32;
+            border-bottom: 3px solid #e46f61;
+        }
+        
+        .modal-message.modal-warning .modal-header {
+            color: #f4b400;
+            border-bottom: 3px solid #ffce55;
+        }
+    </style>
+</head>
+
+<body >
+    <nav class="navbar top-navbar navbar-expand-md navbar-dark" style="background-color:#012753;height:40px;width:100%;position:fixed; left:0; right:0; ">
+        <div>
+        <h7 style="color: white; font-weight:bolder;"> <a style="color: white; font-weight:bolder;" href="/dashboard">SCAR PHARMACY INVENTORY SYSTEM - ADD NEW CUSTOMER</a></h7>
+        </div> 
+                   
+        </nav>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"  ;>
+
+
+
+
+
+        <nav class="navbar justify-content-between" style="background-color: #012753; color:white;">
+            <a class="navbar-brand" style="font-weight:bolder;color:white;"> <b>Add New Customer</b>.</a>
+            <form class="form-inline">
+            </form>
+
+            <button  class="btn btn-info btn-md"><b><a style="color: white;" href="/Retailcustumer_list">Customers</a></b></button>
+          </nav>
+      
+        <div class="container-fluid"  style="
+        justify-content: center;" >
+            <br>
+          
+            <div class="row">
+<br>
+<br>
+                <div class="col-lg-7 col-xlg-7 col-md-7" >
+                    <div class="card">
+
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label style="font-size:18px;font-weight:bolder;color:black;" class="col-md-10 mb-0"> <b>Customer Name</b></label>
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Customer Name" id="customerfullname" class="form-control pl-1 form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  style="font-size:18px;font-weight:bolder;color:black;" class="col-md-10 mb-0"> <b>Customer Telephone</b></label>
+                                <div class="col-md-12">
+                                    <input type="number" placeholder="Customer Telephone" id="telephonecus" class="form-control pl-1 form-control-line">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  style="font-size:18px;font-weight:bolder;color:black;" class="col-md-12 mb-0"><b> Customer Email</b></label>
+                                <div class="col-md-12">
+                                    <input type="email" placeholder="Customer Email" id="emailaddress" class="form-control pl-1 form-control-line">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  style="font-size:18px;font-weight:bolder;color:black;" class="col-md-12 mb-0"> <b>Location</b></label>
+                                <div class="col-md-12">
+                                    <input type="text" placeholder="Customer Location" id="location" class="form-control pl-1 form-control-line">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label  style="font-size:18px;font-weight:bolder;color:black;" class="col-md-12 mb-0"> <b>Customer Gender</b></label>
+                                <div class="col-md-12">
+                                    <select id="Gender" class="form-control pl-0 form-control-line" required>
+                                        <option value="Select Drug Department">Select Gender</option>
+                                      <option value="Male">Male</option>
+                                      <option value="Female">Female</option>
+                                     
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  style="font-size:18px;font-weight:bolder;color:black;" class="col-md-12 mb-0"> <b>Customer Type</b></label>
+                                <div class="col-md-12">
+                                    <select id="CustomerType" class="form-control pl-0 form-control-line" required>
+                                        <option value="Customer Type">Customer Type</option>
+                                      <option value="Active">Active Customer</option>
+                                      <option value="Any Customer">Any Customer</option>
+                                     
+                                    </select>
+                                </div>
+                            </div>
+                        
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12 d-flex">
+                                    <button class="btn btn-success  mx-md-0 text-white" id="submit">Create Customer </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      
+       
+
+
+<div id="modal-success" class="modal modal-message modal-success fade" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+    <i  class='bx bx-check-circle' style='color:#5fde71;width:120px;margin-left:30px;font-size:50px'  ></i>
+</div>
+<div class="modal-title">Great</div>
+<div class="modal-body">Customer Created Successfully!</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+</div>
+</div>
+</div>
+</div>
+
+
+<footer style="background-color:#11101D;position:fixed; left:0; right:0; bottom:0; color:white;height:30px;margin-top:10px;width: 100%;">
+    <div>
+        <h7><i class='bx bxs-capsule' ></i> PharmaTech</h7>
+    </div>
+    
+    </footer>
+    </div>
+
+
+
+
+    <script src="../Assets/js/jquery-3.2.1.min.js"></script>
+    <script>
+           let SaveToDb = document.getElementById('submit')
+    
+        //////////////////////////////
+        SaveToDb.addEventListener('click', function() {
+
+         
+            //alert('Hello Clicked')
+            const DrugsList = []
+            let customer_Name = document.getElementById('customerfullname').value
+            let Telephone = document.getElementById('telephonecus').value
+            let location = document.getElementById('location').value
+            let CustomerType = document.getElementById('CustomerType').value
+            let emailaddress = document.getElementById('emailaddress').value
+            let Gender = document.getElementById('Gender').value
+
+            if (customer_Name === '' || Telephone === '') {
+                alert('CUSTOMER NAME AND CUSTOMER TELEPHONE CANNNOT BE EMPTY')
+            }else{
+                let Data = {
+                  
+                  customer_Name: customer_Name,
+                  Telephone: Telephone,
+                  CustomerType: CustomerType,
+                  location: location,
+                  Gender:Gender,
+                  emailaddress: emailaddress
+              }
+              $.ajax({
+                  type: 'POST',
+                  url: '/Retail_CustomerAddNew',
+                  ContentType: 'application/json',
+                  data: Data,
+                  success: function(data) {
+                      $('#modal-success').modal('show')
+
+                      window.setTimeout(BenTime, 3000)
+
+                  }
+              });
+            
+           
+               
+            }
+
+        })
+
+        function BenTime() {
+            window.location.reload()
+        }
+   ///////////////////////////////////////Benjamin////////////////////
+
+        function goBack() {
+            window.history.back();
+        }
+
+        var options = [];
+
+        $('.dropdown-menu a').on('click', function(event) {
+
+            var $target = $(event.currentTarget),
+                val = $target.attr('data-value'),
+                $inp = $target.find('input'),
+                idx;
+
+            if ((idx = options.indexOf(val)) > -1) {
+                options.splice(idx, 1);
+                setTimeout(function() {
+                    $inp.prop('checked', false)
+                }, 0);
+            } else {
+                options.push(val);
+                setTimeout(function() {
+                    $inp.prop('checked', true)
+                }, 0);
+            }
+
+            $(event.target).blur();
+
+            console.log(options);
+            return false;
+        });
+
+
+/////////////////////////////Backup code/////////////////////////////////////////////////////
+      
+    </script>
+
+
+    
+
+
+
+    <script src="../assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/plugins/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="js/waves.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

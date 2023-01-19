@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="../Assets/css/level.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!----===== Iconscout CSS ===== -->
+<style>
+    body{
+      
+        background-color: #E4E9F7;
+    }
+</style>
+
+    <title>Responsive Regisration Form </title> 
+</head>
+<body>
+    <div class="container">
+        <header><img src="../Assets/img/meds.png" width="50px">Add Drug</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Drug Inventory</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label><b>Drug Name/Item Name</b></label>
+                            <input type="text" id="Drug_name"  placeholder="Enter Item name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label><b>Unit of Measure</b></label>
+                            <input  id="Unit_measure" type="text" placeholder="Unit" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label><b>Cost Price</b></label>
+                            <input  id="Cost_price" type="number" placeholder="GHS" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Selling Price </label>
+                            <input id="Selling_price" type="number" placeholder="GHS" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Select Drug Department</label>
+                            <select required id="Drug_Type">
+                               
+                                <option value="Select Drug Department">Select Drug Department</option>
+                                                <option value="System">System</option>
+                                           
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Select Distributor/Supplier</label>
+                            <select required id="Distributor">
+                            
+                              <option value="System">Select Supplier</option>
+                    
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label>Brand Name</label>
+                            <input id="Vender_name" type="text" placeholder="Brand Name" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>UPC Code</label>
+                            <input id="UPC_code" type="text" placeholder="Enter ID type" required>
+                        </div>
+                        <div class="input-field">
+                            <label>Sheilf Number</label>
+                            <input id="Shelve_Number" type="text" placeholder="Enter ID type" required>
+                        </div>
+                       <br>
+                       <br>
+                       
+                    </div>
+
+                    <div class="details ID">
+                        <br>
+                        <button id="submit"  class="nextBtn" style="width: 90px;">
+                            <span class="btnText">Save Item</span>
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div> 
+                </div>
+
+              
+            </div>
+
+           
+        </form>
+    </div>
+
+
+    <div id="modal-success" class="modal modal-message modal-success fade" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+       <img style="margin-left: 110px;" src="../Assets/img/complete.png" width="70px" />
+        </div>
+        <div class="modal-title">Success</div>
+        <div class="modal-body">Drug Added Successfully!</div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+        </div>
+        </div> <!-- / .modal-content -->
+        </div> <!-- / .modal-dialog -->
+        </div>
+    <script src="../Assets/css/script.js"></script>
+
+    <script>
+        function goBack() {
+        window.history.back();
+        }
+          let submit = document.getElementById('submit')
+          submit.addEventListener("click", (e)=>{
+          e.preventDefault();
+    
+           let Drug_name = (document.getElementById('Drug_name').value).replace(/\//g,'-')
+           let Drug_Type= document.getElementById('Drug_Type').value
+           let Drug_Reff = Drug_name.replace(/\s/g,'')
+           let Unit_measure = (document.getElementById('Unit_measure').value)
+           let Cost_price = document.getElementById('Cost_price').value
+           let Selling_price= (document.getElementById('Selling_price').value)
+           let Vender_name = (document.getElementById('Vender_name').value)
+           let Vendor_Reff = Vender_name.replace(/\s/g,'')
+           let Distributor = document.getElementById('Distributor').value
+           let Distributor_Reff = Distributor.replace(/\s/g,'')
+           let UPC_code2 = document.getElementById('UPC_code').value
+           let Shelve_Number = document.getElementById('Shelve_Number').value
+            var UPC_code
+            if(UPC_code2 !==  '' ){
+                 UPC_code = UPC_code2.replace(/\s/g,'')
+            }else{
+                UPC_code = UPC_code2
+            }
+           if(Drug_name === ''|| Drug_Type === ''|| Unit_measure === '' || Cost_price === '' || Selling_price === ''||Vender_name === ''|| Vender_name === '', Distributor === ''){
+               alert('Warning : Kindly ensure that all fields are filled correctly')
+           }else{
+    
+            let Data = {Drug_name:Drug_name, Drug_Type:Drug_Type, Unit_measure:Unit_measure,Cost_price:Cost_price, Selling_price:Selling_price, Vender_name:Vender_name,Drug_Reff:Drug_Reff, Vendor_Reff:Vendor_Reff,UPC_code:UPC_code, Distributor:Distributor, Distributor_Reff:Distributor_Reff, Shelve_Number:Shelve_Number}
+       
+                console.log(Data)
+                $.ajax({
+                type: 'POST',
+                url: '/Adddrug',
+                ContentType: 'application/json',
+                data: Data,
+                success:  function(data){
+                    $('#modal-success').modal('show')
+                    
+                    window.setTimeout( BenTime, 3000)
+                    
+                    }
+                });
+           }
+    
+          })
+    
+          function BenTime(){
+                window.location.reload()
+                }
+    
+        </script>
+
+        <script src="../Assets/js/jquery-3.2.1.min.js"></script>
+        <script src="../Assets/plugins/jquery/dist/jquery.min.js"></script>
+       <script src="../Assets/plugins/popper.js/dist/umd/popper.min.js"></script>
+      <script src="../Assets/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
