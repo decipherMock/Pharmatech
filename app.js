@@ -134,6 +134,6 @@ app.use(function(err, req, res, next) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //const server = app.listen(3000, () => console.log(`Express server listening on port 3000`));
-const PORT = process.env.PORT;
+const PORT = 80;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 module.exports = app;
